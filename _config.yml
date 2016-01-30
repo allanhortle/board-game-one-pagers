@@ -7,6 +7,8 @@
 
 # Site settings
 title: Board Game One-pagers
+source: src
+destination: dest
 description: > # this means to ignore newlines until "baseurl:"
   One page instructions for those that have played the game but 
   need to brush up on the rules.

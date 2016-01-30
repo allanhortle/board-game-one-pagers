@@ -1,3 +1,4 @@
-_site
+dest
 .sass-cache
 .jekyll-metadata
+
