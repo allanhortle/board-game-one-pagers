@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/allanhortle/bruce.git
-  revision: 3443904b55c773dd13ce344eb428aef652858865
-  specs:
-    bruce (0.2.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,7 +45,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bruce (= 0.2.1)!
   jekyll
   jekyll-sitemap
   s3_website
