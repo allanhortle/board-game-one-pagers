@@ -1,9 +1,14 @@
 ---
 layout: default
 ---
+{% if page.type[0] %}
+    {% assign singleItem = page.type[0] %}
+{% else %}
+    {% assign singleItem = page.type %}
+{% endif %}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <header class="Header-{{page.type | first}}">
+    <header class="Header-{{singleItem}}">
         <h1 class="k" itemprop="name headline">{{ page.title }}</h1>
         <table class="Table Table-meta">
             <tr>
