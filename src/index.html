@@ -2,22 +2,27 @@
 layout: default
 ---
 
-<div class="home">
+{% assign sorted_pages = (site.rules | sort: 'title') %}
 
-  <h1 class="page-heading">Posts</h1>
+<h1 class="Header-dice t-center">{{site.title}}</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+<table class="Table">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Type</th>
+            <th>Time</th>
+            <th>Players</th>
+        </tr>
+    </thead>
+    {% for rule in sorted_pages %}
+        <tr>
+            <td>
+                <a class="post-link" href="{{ rule.url | prepend: site.baseurl }}">{{ rule.title }}</a>
+            </td>
+            <td>{{rule.type}}</td>
+            <td>{{rule.time}}</td>
+            <td>{{rule.players}}</td>
+        </tr>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</table>

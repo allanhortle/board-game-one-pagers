@@ -1,0 +1,22 @@
+{
+  "name": "boardgame-onepagers",
+  "version": "1.0.0",
+  "description": "One page descriptions of board games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanhortle/board-game-one-pagers.git"
+  },
+  "author": "Allan Hortle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanhortle/board-game-one-pagers/issues"
+  },
+  "homepage": "https://github.com/allanhortle/board-game-one-pagers#readme",
+  "dependencies": {
+    "bruce": "^0.3.0"
+  }
+}

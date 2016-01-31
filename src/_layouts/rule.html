@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="Header-{{page.type}}">
+        <h1 class="k" itemprop="name headline">{{ page.title }}</h1>
+        <table class="Table Table-meta">
+            <tr>
+                <td>players</td>
+                <td>{{page.players}}</td>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td>{{page.time}}</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{page.type}}</td>
+            </tr>
+        </table>
+    </header>
+
+    <div class="Markdown" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    <a class="Link" href="/">← Back to List</a>
+
+</article>

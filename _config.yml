@@ -9,6 +9,7 @@
 title: Board Game One-pagers
 source: src
 destination: dest
+host: 0.0.0.0
 description: > # this means to ignore newlines until "baseurl:"
   One page instructions for those that have played the game but 
   need to brush up on the rules.
@@ -19,3 +20,15 @@ github_username:  allanhortle
 
 # Build settings
 markdown: kramdown
+collections:
+    rules:
+        output: true
+        permalink: /:path/
+
+# Default Front-matter
+defaults:
+  - scope:
+      path: ""
+      type: rules
+    values:
+        layout: rule

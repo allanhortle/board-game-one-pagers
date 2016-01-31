@@ -1,6 +1,8 @@
 ---
 name: Zilch
 players: ∞
+time: 30min
+type: dice
 ---
 
 ## Rules

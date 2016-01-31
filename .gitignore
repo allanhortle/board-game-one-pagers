@@ -1,4 +1,6 @@
 dest
+.DS_Store
+node_modules
 .sass-cache
 .jekyll-metadata
 
