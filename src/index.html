@@ -20,7 +20,7 @@ layout: default
             <td>
                 <a class="post-link" href="{{ rule.url | prepend: site.baseurl }}">{{ rule.title }}</a>
             </td>
-            <td>{{rule.type}}</td>
+            <td>{{rule.type | join: ', '}}</td>
             <td>{{rule.time}}</td>
             <td>{{rule.players}}</td>
         </tr>
