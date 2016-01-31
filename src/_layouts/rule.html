@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <header class="Header-{{page.type}}">
+    <header class="Header-{{page.type | first}}">
         <h1 class="k" itemprop="name headline">{{ page.title }}</h1>
         <table class="Table Table-meta">
             <tr>
@@ -16,7 +16,7 @@ layout: default
             </tr>
             <tr>
                 <td>type</td>
-                <td>{{page.type}}</td>
+                <td>{{page.type | join: ', '}}</td>
             </tr>
         </table>
     </header>

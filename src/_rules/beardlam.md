@@ -1,7 +1,9 @@
 ---
-players: 2 - 8
+players: 2-4, 6
 time: 20 - 60min
-type: card
+type: 
+ - dice
+ - take that
 ---
 
 ## Rules

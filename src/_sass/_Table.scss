@@ -1,5 +1,7 @@
 @include bruce-component-table();
 .Table-meta {
-    max-width: 10rem;
+    @include bruce-breakpoint('small') {
+        max-width: 50%;
+    }
 }
 
