@@ -26,7 +26,7 @@ Draw one character face down and, a number face up.
 The king chooses first and then the remaing cards are passed around the circle. Remaining cards are put face down on the table.
 
 ### Play Turns
-* Take an action: take 2 gold || draw two cards and keep 1
+* Take an action (take 2 gold __or__ draw 2 cards and keep 1)
 * Build a distric card
 * Use character power once
 
