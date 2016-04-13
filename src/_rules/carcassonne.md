@@ -70,11 +70,12 @@ The game ends once the last tile is drawn and placed, and final scoring then tak
 * Incomplete **cloisters** are scored. They are worth 1 point for the cloister tile + 1 point for each surrounding land tile.
 * Farmers are scored, see below.
 
-*If more than one player share a city or road, read the score section to see how to split the points.
+* If more than one player share a city or road, read the score section to see how to split the points.
 
 ### Scoring farmers
 
 Farmers score points by supplying food to nearby completed cities.
+
 * Look at each completed city one by one.
 * Find all the farmers in the same field as the city. Fields are the grass regions bound by roads, rivers and other cities.
 * If only one farmer provides food for a city, the player owning that farmer scores 4 points.
