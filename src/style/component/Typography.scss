@@ -1,0 +1,32 @@
+@mixin Typography($name: 'Typography') {
+
+    .#{$name} {
+        * + * {
+            margin: 1rem 0;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+        }
+
+        ul {
+           margin: 1rem 0;
+           padding-left: 1rem;
+        }
+
+        li {
+            list-style-type: square;
+            margin: .5rem 0;
+        }
+    }
+
+    @content;
+}

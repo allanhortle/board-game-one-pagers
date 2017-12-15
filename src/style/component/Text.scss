@@ -1,0 +1,25 @@
+@mixin Text($name: 'Text') {
+
+    .#{$name} {
+        @include BruceDirectionModifiers('margin', 'margin', 1rem);
+
+
+        &-emphasis {
+            font-style: italic;
+        }
+
+        &-muted {
+            color: color('weightMilli');
+        }
+
+        &-capitalize {
+            text-transform: capitalize;
+        }
+
+        &-block {
+            display: block;
+        }
+    }
+
+    @content;
+}

@@ -1,7 +1,10 @@
 ---
+title: Sabotuers
+draft: true
 players: 3 - 10
 time: 30min
-type: card
+type: 
+    - card
 ---
 
 ## Rules

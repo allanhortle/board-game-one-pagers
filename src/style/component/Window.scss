@@ -1,0 +1,56 @@
+@mixin Window($name: 'Window') {
+
+    .#{$name} {
+        &_title {
+            &-navigation {
+                background-color: color('red');
+                box-shadow: inset 0 -.5rem 0 0 darken(color('red'), 4);
+                text-align: center;
+                position: relative;
+                padding: 2rem 0;
+                margin-bottom: 2rem;
+                color: white;
+                font-weight: 500;
+                font-size: 2rem;
+
+                &:before,
+                &:after {
+                    content: '';
+                    width: 150%;
+                    position: absolute;
+                    left: -150%;
+                    background-color: inherit;
+                    top: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    box-shadow: inherit;
+                }
+
+                &:after {
+                    left: auto;
+                    right: -150%;
+                }
+
+                @each $name in (
+                    'dice',
+                    'card',
+                    'board'
+                ) {
+                    &#{$name} {
+                        background-color: color($name);
+                        box-shadow: inset 0 -.5rem 0 0 darken(color($name), 4);
+                    }
+                }
+            }
+        }
+
+        &_content {
+            margin: auto;
+            max-width: 48rem;
+            padding: 0 2rem;
+            padding-bottom: 8rem;
+        }
+    }
+
+    @content;
+}

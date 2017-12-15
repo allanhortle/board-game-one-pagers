@@ -1,6 +1,17 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React from 'react';
+import GatsbyLink from 'gatsby-link';
+import Helmet from 'react-helmet';
+import {Window} from 'goose-css';
+import {WindowTitle} from 'goose-css';
+import {WindowContent} from 'goose-css';
+import {Table} from 'goose-css';
+import {TableBody} from 'goose-css';
+import {TableCell} from 'goose-css';
+import {TableHeadCell} from 'goose-css';
+import {TableHead} from 'goose-css';
+import {TableRow} from 'goose-css';
+import {Link} from 'goose-css';
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -9,27 +20,49 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <Helmet title={title} />
-        {edges.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3 >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <WindowTitle modifier="navigation" element="h1">Board Game One Pagers</WindowTitle>
+        <WindowContent>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableHeadCell modifier="paddingMilli">Game</TableHeadCell>
+                        <TableHeadCell modifier="paddingMilli">Type</TableHeadCell>
+                        <TableHeadCell modifier="paddingMilli">Time</TableHeadCell>
+                        <TableHeadCell modifier="paddingMilli">Players</TableHeadCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {edges.map(({node}) => {
+                        const {title, players, time, type = []} = node.frontmatter;
+
+                        return <TableRow key={node.fields.slug}>
+                            <TableCell modifier="paddingMilli">
+                                <Link element={GatsbyLink} to={node.fields.slug}>{title || node.fields.slug}</Link>
+                            </TableCell>
+                            <TableCell modifier="paddingMilli">{type.join(', ')}</TableCell>
+                            <TableCell modifier="paddingMilli">{time}</TableCell>
+                            <TableCell modifier="paddingMilli">{players}</TableCell>
+                        </TableRow>
+                        return (
+                          <div key={node.fields.slug}>
+                            <h3 >
+
+                            </h3>
+                            <small>{node.frontmatter.date}</small>
+                            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                          </div>
+                        )
+                    })}
+                </TableBody>
+            </Table>
+
+        </WindowContent>
       </div>
     )
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -47,6 +80,9 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            players
+            time
+            type
           }
         }
       }

@@ -1,7 +1,8 @@
 ---
+title: Carcassonne
 players: 2-5
 time: 30min
-type: board
+type: [board]
 ---
 
 ## Setup

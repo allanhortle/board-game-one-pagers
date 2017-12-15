@@ -27,25 +27,32 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 }
 
                 // Create blog posts pages.
-                result.data.allMarkdownRemark.edges.forEach(edge => {
-                    createPage({
-                        path: edge.node.fields.slug,
-                        component: blogPost,
-                        context: {
-                            slug: edge.node.fields.slug,
-                        },
+                result.data
+                    .allMarkdownRemark
+                    .edges
+                    .forEach(edge => {
+                        createPage({
+                            path: edge.node.fields.slug,
+                            component: blogPost,
+                            context: {
+                                slug: edge.node.fields.slug,
+                            },
+                        })
                     })
-                })
             })
         );
     });
 }
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-    const { createNodeField } = boundActionCreators
+    const {createNodeField} = boundActionCreators
 
     if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode })
+        const value = createFilePath({node, getNode});
+        // console.log(node.frontmatter);
+        // if(node.frontmatter.draft) {
+        //     return;
+        // }
         createNodeField({
             name: `slug`,
             node,
