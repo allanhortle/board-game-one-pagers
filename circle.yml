@@ -1,9 +1,0 @@
-test:
-  override:
-    - echo "No tests are needed"
-deployment:
-  production:
-    branch: master
-    commands:
-      - bundle exec jekyll build
-      - bundle exec s3_website push
