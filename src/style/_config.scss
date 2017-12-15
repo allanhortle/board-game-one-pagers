@@ -1,0 +1,63 @@
+@mixin Config() {
+
+    //
+    // Colors
+
+    $colors: (
+        'white': #fff,
+        'black': #000,
+
+        'bodyBackground': #fff,
+        'contentBackground': #fff,
+        'alternativeBackground': grey(94),
+        'disabledBackground': grey(94),
+        'navigationBackground': #EC1C23,
+        'navigationCopy': #fff,
+
+        'heading': #414141,
+        'hero': #293034,
+        'heroAlternative': darken(#293034, 10),
+        'heroPlaceholder': lighten(#293034, 25),
+        'copy': #414141,
+        'weightMilli': #838383,
+        'line': #C3C3C3,
+        'message': grey(60),
+        'link': #4A90E2,
+        'placeholder': #C3C3C3,
+
+        'primary': #EC1C23,
+        'available': #4A90E2,
+        'later': #F5A623,
+        'focus': #007777,
+        'positive': #38C169,
+        'negative': #e85656,
+        'warning': #F5A623
+    );
+
+    $bruce-colors: map-merge($bruce-colors, $colors) !global;
+
+    //
+    // Fonts
+    //
+
+    $fonts: (
+        'heading': ('Roboto Mono', Menlo, sans-serif),
+        'copy': ('Roboto Mono', Menlo, sans-serif),
+        'monospace': (Menlo, Consolas, monospace),
+    );
+
+    $bruce-fonts: map-merge($bruce-fonts, $fonts) !global;
+
+
+    //
+    // Breakpoints
+
+    $breakpoints: (
+        'large':  60rem,
+        'medium': 50rem,
+        'small':  40rem,
+        'tiny':   30rem
+    );
+
+    $bruce-breakpoints: map-merge($bruce-breakpoints, $breakpoints) !global;
+}

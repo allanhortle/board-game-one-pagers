@@ -1,7 +1,6 @@
-dest
+node_modules/
+public
+.gatsby-context.js
 .DS_Store
-node_modules
-vendor
-.sass-cache
-.jekyll-metadata
-
+.intermediate-representation/
+.cache/
