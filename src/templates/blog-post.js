@@ -19,9 +19,7 @@ import {TableRow} from 'goose-css';
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    // const {title} = this.props.data.site.siteMetadata.title;
     const {title, type, players, time} = post.frontmatter;
-    console.log(post)
 
     return <div>
         <Helmet title={title} />
@@ -29,6 +27,7 @@ class BlogPostTemplate extends React.Component {
         <WindowContent>
             <Text modifier="emphasis muted capitalize block marginBottom">{type.join(', ')} | {players} players | {time}</Text>
             <Link to="/" element={GatsbyLink}>← Back to List</Link>
+            <Link to="/" element={GatsbyLink}>Edit</Link>
             <Typography dangerouslySetInnerHTML={{ __html: post.html }} />
             <Link to="/" element={GatsbyLink}>← Back to List</Link>
         </WindowContent>

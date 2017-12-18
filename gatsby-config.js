@@ -1,11 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: 'Gatsby Starter Blog',
-        author: 'Kyle Mathews',
-        description: 'A starter blog demonstrating what Gatsby can do.',
-        siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+        title: 'Board Game One Pagers',
+        author: 'Allan Hortle',
+        description: 'Short instructions for boardgames',
+        siteUrl: 'www.boardgameonepagers.com',
     },
-    pathPrefix: '/gatsby-starter-blog',
     plugins: [
         {
             resolve: `gatsby-source-filesystem`,
@@ -37,21 +36,16 @@ module.exports = {
                         wrapperStyle: `margin-bottom: 1.0725rem`,
                     },
                 },
-                'gatsby-remark-prismjs',
                 'gatsby-remark-copy-linked-files',
-                'gatsby-remark-smartypants',
                 ],
             },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                //trackingId: `ADD YOUR TRACKING ID HERE`,
-            },
-        },
-        `gatsby-plugin-feed`,
+        // {
+        //     resolve: `gatsby-plugin-google-analytics`,
+        //     options: {
+        //         //trackingId: `ADD YOUR TRACKING ID HERE`,
+        //     },
+        // },
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         {

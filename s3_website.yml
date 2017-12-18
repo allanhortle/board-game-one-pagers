@@ -3,7 +3,7 @@ s3_secret: <%= ENV['S3_SECRET'] %>
 s3_bucket: boardgameonepagers.com
 cloudfront_distribution_id: E31B0XEQ8KE4KY
 s3_endpoint: ap-southeast-2
-site: dest
+site: public
 # index_document: index.html
 # error_document: error.html
 

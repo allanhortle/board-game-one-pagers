@@ -32,27 +32,29 @@ class BlogIndex extends React.Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {edges.map(({node}) => {
-                        const {title, players, time, type = []} = node.frontmatter;
+                    {edges
+                        .filter(({node}) => !node.frontmatter.draft)
+                        .map(({node}) => {
+                            const {title, players, time, type = []} = node.frontmatter;
 
-                        return <TableRow key={node.fields.slug}>
-                            <TableCell modifier="paddingMilli">
-                                <Link element={GatsbyLink} to={node.fields.slug}>{title || node.fields.slug}</Link>
-                            </TableCell>
-                            <TableCell modifier="paddingMilli">{type.join(', ')}</TableCell>
-                            <TableCell modifier="paddingMilli">{time}</TableCell>
-                            <TableCell modifier="paddingMilli">{players}</TableCell>
-                        </TableRow>
-                        return (
-                          <div key={node.fields.slug}>
-                            <h3 >
+                            return <TableRow key={node.fields.slug}>
+                                <TableCell modifier="paddingMilli">
+                                    <Link element={GatsbyLink} to={node.fields.slug}>{title || node.fields.slug}</Link>
+                                </TableCell>
+                                <TableCell modifier="paddingMilli">{type.join(', ')}</TableCell>
+                                <TableCell modifier="paddingMilli">{time}</TableCell>
+                                <TableCell modifier="paddingMilli">{players}</TableCell>
+                            </TableRow>
+                            return (
+                              <div key={node.fields.slug}>
+                                <h3 >
 
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
-                            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                          </div>
-                        )
-                    })}
+                                </h3>
+                                <small>{node.frontmatter.date}</small>
+                                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                              </div>
+                            )
+                        })}
                 </TableBody>
             </Table>
 
@@ -80,6 +82,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            draft
             players
             time
             type
