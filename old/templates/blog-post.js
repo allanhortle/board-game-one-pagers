@@ -17,26 +17,37 @@ import {TableHead} from 'goose-css';
 import {TableRow} from 'goose-css';
 
 class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const {title, type, players, time} = post.frontmatter;
+    render() {
+        const post = this.props.data.markdownRemark;
+        const {title, type, players, time} = post.frontmatter;
 
-    return <div>
-        <Helmet title={title} />
-        <WindowTitle modifier={`navigation navigation${type[0]}`} element="h1">{title}</WindowTitle>
-        <WindowContent>
-            <Text modifier="emphasis muted capitalize block marginBottom">{type.join(', ')} | {players} players | {time}</Text>
-            <Link to="/" element={GatsbyLink}>← Back to List</Link>
-            <Link to="/" element={GatsbyLink}>Edit</Link>
-            <Typography dangerouslySetInnerHTML={{ __html: post.html }} />
-            <Link to="/" element={GatsbyLink}>← Back to List</Link>
-        </WindowContent>
-
-    </div>;
-  }
+        return (
+            <div>
+                <Helmet title={title} />
+                <WindowTitle modifier={`navigation navigation${type[0]}`} element="h1">
+                    {title}
+                </WindowTitle>
+                <WindowContent>
+                    <Text modifier="emphasis muted capitalize block marginBottom">
+                        {type.join(', ')} | {players} players | {time}
+                    </Text>
+                    <Link to="/" element={GatsbyLink}>
+                        ← Back to List
+                    </Link>
+                    <Link to="/" element={GatsbyLink}>
+                        Edit
+                    </Link>
+                    <Typography dangerouslySetInnerHTML={{__html: post.html}} />
+                    <Link to="/" element={GatsbyLink}>
+                        ← Back to List
+                    </Link>
+                </WindowContent>
+            </div>
+        );
+    }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
     query BlogPostBySlug($slug: String!) {
@@ -46,7 +57,7 @@ export const pageQuery = graphql`
                 author
             }
         }
-        markdownRemark(fields: { slug: { eq: $slug } }) {
+        markdownRemark(fields: {slug: {eq: $slug}}) {
             id
             html
             frontmatter {
@@ -57,4 +68,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;

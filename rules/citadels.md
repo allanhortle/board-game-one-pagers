@@ -1,7 +1,7 @@
 ---
 title: Citadels
 players: 2-8
-time: 20 - 60min
+time: 20-60min
 type: 
     - card
 ---

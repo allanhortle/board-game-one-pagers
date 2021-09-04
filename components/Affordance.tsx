@@ -14,7 +14,6 @@ import {
     color as colorSystem,
     ColorProps
 } from 'styled-system';
-import NextLink from 'next/link';
 
 export const styledProps = compose(
     layout,
@@ -87,7 +86,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${(_) => _.theme.colors.bg};
         color: ${(_) => _.theme.colors.fg};
         font-family: ${(_) => _.theme.fonts.copy};
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.5;
         font-weight: 300;
     }
@@ -101,22 +100,11 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
     ul > & {
-        &:before {
-            content: '*';
-            position: absolute;
-            left: 0.6em;
-        }
+        list-style-type: square;
     }
 
     ol > & {
         list-style-type: decimal;
-    }
-`;
-
-export const Link = styled(NextLink)`
-    color: inherit;
-    &:visited {
-        color: inherit;
     }
 `;
 
@@ -132,35 +120,6 @@ export const Input = styled.input`
     font-family: inherit;
     display: block;
     width: 100%;
-`;
-
-const syntax = (key: any, color: any) => (props: any) =>
-    `& .${key} {color: ${props.theme.colors[color]};}`;
-export const Code = styled.pre`
-    color: ${(_) => _.theme.colors.fg};
-    background-color: ${(_) => _.theme.colors.black};
-    margin: 1em 0;
-    padding: 0.6em;
-    overflow-x: auto;
-    font-family: Menlo, monospace;
-    font-size: 0.8rem;
-
-    ${syntax('comment', 'comment')}
-    ${syntax('keyword', 'red')}
-   ${syntax('string', 'green')}
-   ${syntax('number', 'blue')}
-   ${syntax('tag', 'yellow')}
-   ${syntax('script', 'fg')}
-
-   ${syntax('selector', 'yellow')}
-   ${syntax('property', 'red')}
-
-   .gatsby-highlight-code-line {
-        display: block;
-        background-color: ${color('lineHighlight')};
-        margin: 0 -0.6em;
-        padding: 0 0.6em;
-    }
 `;
 
 export const Quote = styled.blockquote`
@@ -180,7 +139,6 @@ export const Quote = styled.blockquote`
     }
 `;
 
-export const Text = styled.span<StyledProps>({}, styledProps);
 export const Button = styled.button`
     ${textStyle}
     ${typography}
@@ -200,25 +158,3 @@ export const Button = styled.button`
 `;
 
 export const Image = styled('img')({}, layout);
-
-//
-// Tables
-
-export const Table = styled.table`
-    width: 100%;
-    border-bottom: 1px solid;
-`;
-
-export const TableHeadCell = styled.th`
-    border: 1px solid;
-    padding: 0.5rem;
-    font-weight: bold;
-`;
-
-export const TableCell = styled.th`
-    border: 1px solid;
-    padding: 0.5rem;
-`;
-export const TableBody = 'tbody';
-export const TableHead = 'thead';
-export const TableRow = 'tr';

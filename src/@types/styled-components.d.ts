@@ -27,6 +27,8 @@ declare module 'styled-components' {
         };
         colors: {
             bg: string;
+            blue: string;
+            purple: string;
             comment: string;
             fg: string;
             black: string;

@@ -7,15 +7,15 @@ function makeTheme(colors) {
         },
         textStyles: {
             heading1: {
-                fontSize: '3rem',
+                fontSize: '2rem',
                 fontWeight: 500
             },
             heading2: {
-                fontSize: '2rem',
+                fontSize: '1.5rem',
                 fontWeight: '500'
             },
             heading3: {
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 fontWeight: '500'
             },
             em: {
@@ -33,7 +33,7 @@ export const DarkTheme = makeTheme({
     fg: '#fafafa',
     comment: '#6D6D6D',
     black: '#0c0c0c',
-    blue: '#6699cc',
+    blue: '#1d4ed8',
     green: '#99c794',
     yellow: '#fac863',
     white: '#fac863',
@@ -47,11 +47,13 @@ export const LightTheme = makeTheme({
     bg: '#fff',
     comment: '#a39e9b',
     black: '#ececec',
-    blue: '#155bf9',
+    blue: '#1d4ed8',
+    orange: '#FB923C',
     green: '#48b685',
     yellow: '#155bf9',
     white: '#e7e9db',
     red: '#155bf9',
-    purple: '#155bf9',
+    purple: '#6D28D9',
+    muted: '#9e9e9e',
     lineHighlight: 'rgb(188, 217, 219)'
 });

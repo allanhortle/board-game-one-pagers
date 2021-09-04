@@ -32,6 +32,10 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <meta
+                        name="description"
+                        content="Board game rules, but just enough to remember how to play."
+                    />
                     <link
                         href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500&display=optional"
                         rel="stylesheet"
