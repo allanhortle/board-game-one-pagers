@@ -5,7 +5,7 @@ import {MDXRemote} from 'next-mdx-remote';
 import {List, ListItem} from 'components/Affordance';
 import Text from 'components/Text';
 import Link from 'components/Link';
-import {Wrapper, Flex} from 'components/Layout';
+import {Wrapper} from 'components/Layout';
 
 export default function Post({post}: any) {
     const router = useRouter();
@@ -28,7 +28,7 @@ export default function Post({post}: any) {
     return (
         <Wrapper>
             <Text as="h1" textStyle="heading1" pt={4}>
-                {title}
+                {title} rules
             </Text>
             <Text as="p" color="muted" mb={3}>
                 {type} | {players} players | {time}
