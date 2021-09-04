@@ -1,58 +1,29 @@
 {
   "name": "board-game-one-pagers",
-  "description": "Board Game One Pagers",
-  "version": "0.0.0",
-  "author": "Allan Hortle",
-  "bugs": {
-    "url": "https://github.com/allanhortle/board-game-one-pagers/issues"
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "bruce": "^2.0.0",
-    "gatsby": "^1.9.135",
-    "gatsby-link": "^1.6.32",
-    "gatsby-plugin-feed": "^1.3.15",
-    "gatsby-plugin-google-analytics": "^1.0.14",
-    "gatsby-plugin-offline": "^1.0.12",
-    "gatsby-plugin-postcss-sass": "^1.0.15",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sharp": "^1.6.24",
-    "gatsby-plugin-typography": "^1.7.10",
-    "gatsby-remark-copy-linked-files": "^1.5.23",
-    "gatsby-remark-images": "^1.5.36",
-    "gatsby-remark-prismjs": "^1.2.11",
-    "gatsby-remark-responsive-iframe": "^1.4.16",
-    "gatsby-remark-smartypants": "^1.4.10",
-    "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.25",
-    "gatsby-transformer-sharp": "^1.6.16",
-    "goose-css": "^0.10.0",
-    "react-responsive-grid": "^0.3.4",
-    "stampy": "^0.34.0"
+    "gray-matter": "^4.0.3",
+    "next": "11.1.2",
+    "next-mdx-remote": "^3.0.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "remark": "^14.0.1",
+    "remark-html": "^14.0.0",
+    "styled-components": "^5.3.1",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "eslint": "^4.13.1",
-    "eslint-plugin-react": "^7.5.1",
-    "gh-pages": "^1.1.0",
-    "prettier": "^1.9.2"
-  },
-  "homepage": "https://github.com/allanhortle/board-game-one-pagers#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/allanhortle/board-game-one-pagers.git"
-  },
-  "scripts": {
-    "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "@types/react": "17.0.19",
+    "@types/styled-components": "^5.1.14",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.2"
   }
 }
