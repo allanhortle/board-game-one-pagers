@@ -1,8 +1,41 @@
 import styled, {createGlobalStyle} from 'styled-components';
-import {space, layout, textStyle, typography, position, color as colorSystem} from 'styled-system';
+import {
+    compose,
+    space,
+    SpaceProps,
+    layout,
+    LayoutProps,
+    textStyle,
+    TextStyleProps,
+    typography,
+    TypographyProps,
+    position,
+    PositionProps,
+    color as colorSystem,
+    ColorProps
+} from 'styled-system';
 import NextLink from 'next/link';
 
-const color = (key) => (props) => props.theme.colors[key];
+export const styledProps = compose(
+    layout,
+    position,
+    space,
+    textStyle,
+    typography,
+    colorSystem,
+    position
+);
+
+export interface StyledProps
+    extends TypographyProps,
+        ColorProps,
+        LayoutProps,
+        SpaceProps,
+        TextStyleProps,
+        PositionProps,
+        TypographyProps {}
+
+const color = (key: any) => (props: any) => props.theme.colors[key];
 
 export const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -101,7 +134,8 @@ export const Input = styled.input`
     width: 100%;
 `;
 
-const syntax = (key, color) => (props) => `& .${key} {color: ${props.theme.colors[color]};}`;
+const syntax = (key: any, color: any) => (props: any) =>
+    `& .${key} {color: ${props.theme.colors[color]};}`;
 export const Code = styled.pre`
     color: ${(_) => _.theme.colors.fg};
     background-color: ${(_) => _.theme.colors.black};
@@ -146,7 +180,7 @@ export const Quote = styled.blockquote`
     }
 `;
 
-export const Text = styled.span({}, textStyle, typography, space, layout, position, colorSystem);
+export const Text = styled.span<StyledProps>({}, styledProps);
 export const Button = styled.button`
     ${textStyle}
     ${typography}
@@ -164,24 +198,6 @@ export const Button = styled.button`
     ${(p) => `padding: 0 ${p.theme.space[1]}px;`}
     cursor: pointer;
 `;
-
-export const Heading = styled(Text)`
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-`;
-Heading.defaultProps = {
-    as: 'h1'
-};
-
-export const SubHeading = styled(Text)`
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-`;
-SubHeading.defaultProps = {
-    as: 'h2'
-};
 
 export const Image = styled('img')({}, layout);
 

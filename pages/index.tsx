@@ -1,4 +1,3 @@
-import type {NextPage} from 'next';
 import Head from 'next/head';
 import {getAllPosts} from 'src/api';
 import {
@@ -13,8 +12,7 @@ import {
 } from 'components/Affordance';
 import {Wrapper} from 'components/Layout';
 
-export default function Home(props) {
-    console.log(props);
+export default function Home(props: any) {
     return (
         <Wrapper>
             <Head>
@@ -35,24 +33,24 @@ export default function Home(props) {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableHeadCell modifier="paddingMilli">Game</TableHeadCell>
-                            <TableHeadCell modifier="paddingMilli">Type</TableHeadCell>
-                            <TableHeadCell modifier="paddingMilli">Time</TableHeadCell>
-                            <TableHeadCell modifier="paddingMilli">Players</TableHeadCell>
+                            <TableHeadCell>Game</TableHeadCell>
+                            <TableHeadCell>Type</TableHeadCell>
+                            <TableHeadCell>Time</TableHeadCell>
+                            <TableHeadCell>Players</TableHeadCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {props.allPosts.map((post) => {
+                        {props.allPosts.map((post: any) => {
                             const {slug, title, players, time, type = []} = post;
 
                             return (
                                 <TableRow key={slug}>
-                                    <TableCell modifier="paddingMilli">
+                                    <TableCell>
                                         <Link href={`/game/${slug}`}>{title}</Link>
                                     </TableCell>
-                                    <TableCell modifier="paddingMilli">{type.join(', ')}</TableCell>
-                                    <TableCell modifier="paddingMilli">{time}</TableCell>
-                                    <TableCell modifier="paddingMilli">{players}</TableCell>
+                                    <TableCell>{type.join(', ')}</TableCell>
+                                    <TableCell>{time}</TableCell>
+                                    <TableCell>{players}</TableCell>
                                 </TableRow>
                             );
                         })}

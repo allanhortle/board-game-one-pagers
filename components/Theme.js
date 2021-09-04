@@ -12,25 +12,17 @@ function makeTheme(colors) {
             },
             heading2: {
                 fontSize: '2rem',
-                fontWeight: 500
+                fontWeight: '500'
             },
             heading3: {
                 fontSize: '1.5rem',
-                fontWeight: 500
+                fontWeight: '500'
             },
             em: {
                 fontStyle: 'italic'
             },
             strong: {
                 fontWeight: 'bold'
-            },
-            code: {
-                color: colors.purple,
-                backgroundColor: colors.black
-            },
-            href: {
-                cursor: 'pointer',
-                textDecoration: 'underline'
             }
         }
     };
