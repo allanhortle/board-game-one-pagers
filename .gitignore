@@ -4,3 +4,5 @@ public
 .DS_Store
 .intermediate-representation/
 .cache/
+
+.vercel
