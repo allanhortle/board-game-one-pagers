@@ -29,17 +29,27 @@ export default class MyDocument extends Document {
         }
     }
     render() {
+        const url = 'https://boardgameonepagers.com/';
+        const img = `${url}bgop-og.png`;
+        const title = 'Board Game One Pagers';
+        const description = 'Board game rules, but just enough to remember how to play.';
         return (
             <Html>
                 <Head>
-                    <meta
-                        name="description"
-                        content="Board game rules, but just enough to remember how to play."
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500&display=optional"
-                        rel="stylesheet"
-                    />
+                    <meta name="title" content={title} />
+                    <meta name="description" content={description} />
+
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={url} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:description" content={description} />
+                    <meta property="og:image" content={img} />
+
+                    <meta property="twitter:card" content="summary_large_image" />
+                    <meta property="twitter:url" content={url} />
+                    <meta property="twitter:title" content={title} />
+                    <meta property="twitter:description" content={description} />
+                    <meta property="twitter:image" content={img} />
                 </Head>
                 <body>
                     <Main />
