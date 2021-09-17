@@ -43,7 +43,7 @@ type:
 ## Menus
 \* All Meals have Nigiri
 
-||Rolls|Appetizer|Special|Desert|
+||Rolls|Appetizer|Special|Dessert|
 |-|-|-|-|-|
 |**My First Meal**|Maki|Tempura, Sashimi, Miso|Wasabi, Tea|Green Tea Ice Cream|
 |**Sushi Go!**|Maki|Tempura, Sashimi, Dumpling|Chopsticks, Wasabi|Pudding|

@@ -27,7 +27,7 @@ export default function Post({post}: any) {
         ol: (props: any) => <OrderedList mb={3} {...props} />,
         td: (p: any) => <Td {...p} borderTop="outline" />,
         th: Th,
-        table: (p: any) => <Table mb={3} {...p} />
+        table: (p: any) => <Box overflowX="auto"><Table mb={3} {...p} /></Box>
     };
     return (
         <Wrapper px={[3, 3, 2]} pt={4}>
