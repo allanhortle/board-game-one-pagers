@@ -9,17 +9,23 @@ export function getPostSlugs() {
     return fs.readdirSync(postsDirectory);
 }
 
+type FrontMatter = {
+    slug: string;
+    draft: boolean;
+};
+
 export async function getPostBySlug(slug: string, fields = []) {
     const realSlug = slug.replace(/\.md$/, '');
     const fullPath = join(postsDirectory, `${realSlug}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const {data, content} = matter(fileContents);
     const mdx = await serialize(content);
-    return {data: {...data, slug: realSlug}, mdx};
+    const frontmatter = {...data, slug: realSlug} as FrontMatter;
+    return {data: frontmatter, mdx};
 }
 
 export async function getAllPosts() {
     const slugs = getPostSlugs();
     const posts = await Promise.all(slugs.map((slug) => getPostBySlug(slug)));
-    return posts.map((ii) => ii.data);
+    return posts.map((ii) => ii.data).filter(ii => !ii.draft);
 }
