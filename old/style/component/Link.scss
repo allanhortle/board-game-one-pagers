@@ -1,9 +1,0 @@
-@mixin Link($name: 'Link') {
-
-    .#{$name} {
-        color: color('link');
-        text-decoration: underline;
-    }
-
-    @content;
-}
