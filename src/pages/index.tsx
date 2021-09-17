@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {getAllPosts} from 'src/api';
+import {getAllPosts} from 'api';
 import {Table, Th, Td, Tr} from 'components/Table';
 import Link from 'components/Link';
 import Text from 'components/Text';

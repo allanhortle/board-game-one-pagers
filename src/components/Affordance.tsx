@@ -86,7 +86,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${(_) => _.theme.colors.bg};
         color: ${(_) => _.theme.colors.fg};
         font-family: ${(_) => _.theme.fonts.copy};
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5;
         font-weight: 300;
     }

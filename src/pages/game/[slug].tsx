@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
 import ErrorPage from 'next/error';
-import {getPostBySlug, getAllPosts} from 'src/api';
+import {getPostBySlug, getAllPosts} from 'api';
 import {MDXRemote} from 'next-mdx-remote';
 import {List, OrderedList} from 'components/Affordance';
 import {Table, Td, Th} from 'components/Table';
