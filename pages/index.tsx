@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {getAllPosts} from 'src/api';
-import {Table, Th, Td} from 'components/Table';
+import {Table, Th, Td, Tr} from 'components/Table';
 import Link from 'components/Link';
 import Text from 'components/Text';
 import {Wrapper, Box} from 'components/Layout';
@@ -12,35 +12,35 @@ export default function Home(props: any) {
                 <title>Board Game One Pagers</title>
             </Head>
 
-            <Wrapper pt={4} pb={3}>
-                <Text as="h1" textStyle="heading1">
+            <Wrapper px={[3, 3, 2]} py={5} pt={4}>
+                <Text as="h1" mt={5} mb={3} textStyle="heading1">
                     Game List
                 </Text>
-            </Wrapper>
-
-            <Wrapper>
-                <Table>
+                <Table width="100%">
                     <thead>
                         <tr>
-                            <Th>Game</Th>
+                            <Th pl={2}>Game</Th>
                             <Th>Type</Th>
                             <Th>Time</Th>
                             <Th>Players</Th>
                         </tr>
                     </thead>
                     <tbody>
-                        {props.allPosts.map((post: any) => {
+                        {props.allPosts.map((post: any, index: number) => {
                             const {slug, title, players, time, type = []} = post;
 
                             return (
-                                <tr key={slug}>
-                                    <Td>
+                                <Tr
+                                    key={slug}
+                                    backgroundColor={index % 2 === 0 ? 'bg1' : undefined}
+                                >
+                                    <Td py={2} pl={2}>
                                         <Link href={`/game/${slug}`}>{title}</Link>
                                     </Td>
                                     <Td>{type.join(', ')}</Td>
                                     <Td>{time}</Td>
                                     <Td>{players}</Td>
-                                </tr>
+                                </Tr>
                             );
                         })}
                     </tbody>

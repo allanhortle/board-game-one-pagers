@@ -12,7 +12,7 @@ export default function App({Component, pageProps}: AppProps) {
             <Box pb={5}>
                 <GlobalStyle />
                 <Box py={2} backgroundColor="blue" color="bg">
-                    <Wrapper>
+                    <Wrapper px={[3, 3, 2]}>
                         <Clickable href="/">
                             <Flex>
                                 <svg

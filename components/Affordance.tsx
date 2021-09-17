@@ -90,22 +90,20 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
         font-weight: 300;
     }
+    strong {font-weight: bold};
+    em {font-style: italic};
 `;
 
 export const List = styled.ul`
     ${space}
-    padding-left: 1.8em;
-    position: relative;
+    padding-left: 1.5rem;
+    list-style: disc;
 `;
 
-export const ListItem = styled.li`
-    ul > & {
-        list-style-type: square;
-    }
-
-    ol > & {
-        list-style-type: decimal;
-    }
+export const OrderedList = styled.ol`
+    ${space}
+    padding-left: 1.5rem;
+    list-style: decimal;
 `;
 
 export const Label = styled.span`

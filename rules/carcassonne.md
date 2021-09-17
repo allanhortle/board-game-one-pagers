@@ -7,14 +7,14 @@ type: [board]
 
 ## Setup
 
-* Place starting tile in middle of table.
-* Shuffle remaining land tiles and place them face down away from the starting tile so players have easy access to them.
-* Youngest player decides who goes first.
+1. Place starting tile in middle of table.
+2. Shuffle remaining land tiles and place them face down away from the starting tile so players have easy access to them.
+3. Youngest player decides who goes first.
 
 ### Setup with river tiles
-* Remove starting tile from the table.
-* Place the spring tile in middle of table, the start of the river.
-* Set aside the lake tile and shuffle the 10 river tiles, placing them in a stack.
+4. Remove starting tile from the table.
+5. Place the spring tile in middle of table, the start of the river.
+6. Set aside the lake tile and shuffle the 10 river tiles, placing them in a stack.
 
 ## Player's turn
 
@@ -66,11 +66,10 @@ If more than one follower shares a completed road or city, all points go to the 
 
 The game ends once the last tile is drawn and placed, and final scoring then takes place. The player with the most points after final scoring wins.
 
-* Incomplete **cities** are scored. They are worth 1 point per tile + 1 point per pennant.*
-* Incomplete **roads** are scored. They are worth 1 point per tile.*
+* Incomplete **cities** are scored. They are worth 1 point per tile + 1 point per pennant.
+* Incomplete **roads** are scored. They are worth 1 point per tile.
 * Incomplete **cloisters** are scored. They are worth 1 point for the cloister tile + 1 point for each surrounding land tile.
 * Farmers are scored, see below.
-
 * If more than one player share a city or road, read the score section to see how to split the points.
 
 ### Scoring farmers

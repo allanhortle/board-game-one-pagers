@@ -8,6 +8,4 @@ export const Fixed = styled.div<StyledProps>({position: 'fixed'}, styledProps);
 export const Wrapper = styled(Box)`
     max-width: 48rem;
     margin: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
 `;

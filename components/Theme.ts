@@ -1,28 +1,31 @@
-function makeTheme(colors) {
+function makeTheme(colors: any) {
     return {
         space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
         colors,
         fonts: {
-            copy: 'Roboto Mono, Menlo, sans-serif'
+            copy: "'Inter', sans-serif"
+        },
+        borders: {
+            outline: '1px solid'
         },
         textStyles: {
             heading1: {
                 fontSize: '2rem',
-                fontWeight: 500
+                fontWeight: 800
             },
             heading2: {
                 fontSize: '1.5rem',
-                fontWeight: '500'
+                fontWeight: 800
             },
             heading3: {
                 fontSize: '1.25rem',
-                fontWeight: '500'
+                fontWeight: 800
             },
             em: {
                 fontStyle: 'italic'
             },
             strong: {
-                fontWeight: 'bold'
+                fontWeight: 800
             }
         }
     };
@@ -30,6 +33,7 @@ function makeTheme(colors) {
 
 export const DarkTheme = makeTheme({
     bg: 'black',
+    bg1: 'black',
     fg: '#fafafa',
     comment: '#6D6D6D',
     black: '#0c0c0c',
@@ -45,6 +49,7 @@ export const DarkTheme = makeTheme({
 export const LightTheme = makeTheme({
     fg: '#4f424c',
     bg: '#fff',
+    bg1: '#e3e4ea',
     comment: '#a39e9b',
     black: '#ececec',
     blue: '#1d4ed8',
