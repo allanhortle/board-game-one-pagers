@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components';
 import {Box, Wrapper, Flex} from 'components/Layout';
 import Text from 'components/Text';
 import Clickable from 'components/Clickable';
+import GoatCounter from './GoatCounter';
 
 export default function App({Component, pageProps}: AppProps) {
     return (
@@ -30,6 +31,7 @@ export default function App({Component, pageProps}: AppProps) {
                 </Box>
                 <Component {...pageProps} />
             </Box>
+            <GoatCounter />
         </ThemeProvider>
     );
 }
