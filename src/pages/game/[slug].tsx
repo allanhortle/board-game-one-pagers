@@ -1,4 +1,5 @@
 import {useRouter} from 'next/router';
+import Head from 'next/head';
 import ErrorPage from 'next/error';
 import {getPostBySlug, getAllPosts} from 'api';
 import {MDXRemote} from 'next-mdx-remote';
@@ -27,10 +28,17 @@ export default function Post({post}: any) {
         ol: (props: any) => <OrderedList mb={3} {...props} />,
         td: (p: any) => <Td {...p} borderTop="outline" />,
         th: Th,
-        table: (p: any) => <Box overflowX="auto" mx="-1rem" px="1rem"><Table mb={3} {...p} /></Box>
+        table: (p: any) => (
+            <Box overflowX="auto" mx="-1rem" px="1rem">
+                <Table mb={3} {...p} />
+            </Box>
+        )
     };
     return (
         <Wrapper px={[3, 3, 2]} pt={4}>
+            <Head>
+                <title>{title} rules</title>
+            </Head>
             <Text as="h1" textStyle="heading1" pt={5}>
                 {title} rules
             </Text>
