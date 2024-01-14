@@ -37,7 +37,7 @@ export default function Post({post}: any) {
     return (
         <Wrapper px={[3, 3, 2]} pt={4}>
             <Head>
-                <title>{title} rules</title>
+                <title>{`${title} rules`}</title>
             </Head>
             <Text as="h1" textStyle="heading1" pt={5}>
                 {title} rules

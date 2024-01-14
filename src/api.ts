@@ -27,5 +27,5 @@ export async function getPostBySlug(slug: string, fields = []) {
 export async function getAllPosts() {
     const slugs = getPostSlugs();
     const posts = await Promise.all(slugs.map((slug) => getPostBySlug(slug)));
-    return posts.map((ii) => ii.data).filter(ii => !ii.draft);
+    return posts.map((ii) => ii.data).filter((ii) => !ii.draft);
 }
