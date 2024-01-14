@@ -14,7 +14,7 @@ type FrontMatter = {
     draft: boolean;
 };
 
-export async function getPostBySlug(slug: string, fields = []) {
+export async function getPostBySlug(slug: string) {
     const realSlug = slug.replace(/\.md$/, '');
     const fullPath = join(postsDirectory, `${realSlug}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
