@@ -3,11 +3,7 @@ import Head from 'next/head';
 import ErrorPage from 'next/error';
 import {getPostBySlug, getAllPosts} from 'api';
 import {MDXRemote} from 'next-mdx-remote';
-import {List, OrderedList} from 'components/Affordance';
-import {Table, Td, Th} from 'components/Table';
-import Text from 'components/Text';
 import Link from 'components/Link';
-import {Wrapper, Box} from 'components/Layout';
 
 export default function Post({post}: any) {
     const router = useRouter();
@@ -18,37 +14,34 @@ export default function Post({post}: any) {
     const {title, type, players, time} = post.data;
 
     const components = {
-        h1: (props: any) => <Text as="h1" mt={5} textStyle="heading1" {...props} />,
+        h1: (props: any) => <h1 className="text-3xl font-bold" {...props} />,
         h2: (props: any) => (
-            <Text as="h2" mt={4} mb={2} borderBottom="1px solid" textStyle="heading2" {...props} />
+            <h2 className="mt-8 mb-2 border-b border-gray-400 text-xl font-bold" {...props} />
         ),
-        h3: (props: any) => <Text as="h3" mt={2} mb={1} textStyle="heading3" {...props} />,
-        p: (props: any) => <Text as="p" mb={3} {...props} />,
-        ul: (props: any) => <List mb={3} {...props} />,
-        ol: (props: any) => <OrderedList mb={3} {...props} />,
-        td: (p: any) => <Td {...p} borderTop="outline" />,
-        th: Th,
+        h3: (props: any) => <h3 className="mt-2 mb-1 font-bold text-lg" {...props} />,
+        p: (props: any) => <p className="mb-4" {...props} />,
+        ul: (props: any) => <ul className="list-disc pl-6 mb-4" {...props} />,
+        ol: (props: any) => <ol className="list-decimal pl-6 mb-4" mb={3} {...props} />,
+        td: (props: any) => <td className="border-t border-gray-400" {...props} />,
+        th: (props: any) => <th className="pr-4" {...props} />,
         table: (p: any) => (
-            <Box overflowX="auto" mx="-1rem" px="1rem">
-                <Table mb={3} {...p} />
-            </Box>
+            <div className="overflow-x-auto -mx-4 px-4">
+                <table className="mb-4" {...p} />
+            </div>
         )
     };
     return (
-        <Wrapper px={[3, 3, 2]} pt={4}>
+        <div className="max-w-3xl px-4 pt-24 mx-auto">
             <Head>
                 <title>{`${title} rules`}</title>
             </Head>
-            <Text as="h1" textStyle="heading1" pt={5}>
-                {title} rules
-            </Text>
-            <Text as="p" color="muted" mb={3}>
+            <h1 className="text-3xl text-center font-bold">{title} rules</h1>
+            <p className="mb-16 text-center text-gray-500">
                 {type} | {players} players | {time}
-            </Text>
-            <Link href="/">← Back to List</Link>
+            </p>
             <MDXRemote {...post.mdx} components={components} />
             <Link href="/">← Back to List</Link>
-        </Wrapper>
+        </div>
     );
 }
 
