@@ -20,6 +20,7 @@ Draw one character face down and, a number face up.
 
 | Players | Number of face-up cards |
 |---------|-------------------------|
+| 3       | 0, each player gets 2 roles | 
 | 4       | 2                       |
 | 5       | 1                       |
 | 6+      | 0                       |
@@ -34,6 +35,10 @@ The king chooses first and then the remaing cards are passed around the circle. 
 
 ## Gotchas
 * If you draw the king face up when removing characters imediately replace it with another.
+* you cant have two of the same district
+* dead bishops cant protect angthing
+* assassin/dead people cant be stolen from
+* theif doesnt get gold till just before their victims turn
 
 ## Scoring
 When a player build 8 districts the game is over at the end of this round.
